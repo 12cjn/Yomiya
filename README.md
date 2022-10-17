@@ -1,5 +1,7 @@
 这是一个docsify的模板，可以助你轻松构建web文档。
 
+demo页面:https://12cjn.github.io/Yomiya/#/
+
 ## 模板特点
 
 * [X] 主题切换
