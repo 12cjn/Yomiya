@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="static/docsify/themes/theme-defaults.css" title="theme-defaults" disabled>
   <!--支持mermaid-->
   <!-- <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css"> -->
+  <!-- Gitalk css -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -52,6 +54,7 @@
   <div id="app">加载中...</div>
 
   <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4.12.2/lib/docsify.min.js"></script> -->
   <script src="static/docsify/lib/docsify.min.js"></script>
   <!-- 支持mermaid -->
   <!-- <script src="static/mermaid/dist/mermaid.min.js"></script> -->
@@ -79,10 +82,10 @@
         coverpage: true, // 封面
         // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级
         maxLevel: 3,
-        // 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
-        subMaxLevel: 4,
         // 加载侧边栏
         loadSidebar: true,
+        // 自定义侧边栏后默认不会再生成目录，你也可以通过设置生成目录的最大层级开启这个功能
+        subMaxLevel: 3,
         // 启用导航栏load from _navbar.md ,也可以在此页面自定义导航栏
         loadNavbar: false,
         // 自动为每个页面添加标题
@@ -100,7 +103,6 @@
         // 配置 alias 避免不必要的回退过程
         alias: {
           '/.*/_navbar.md': '/_navbar.md',
-          '/.*/_sidebar.md': '/_sidebar.md'
         },
         // 分页
         pagination: {
@@ -182,6 +184,22 @@
       }
     </script>
 
+    <!-- plugin：gitalk(用户评论) -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script>
+      const gitalk = new Gitalk({
+        clientID: 'd028a1a2d9393917b6ec',
+        clientSecret: '7e90fd31c29b8c931c24d1b4718409850b4414b6',
+        repo: 'mydocsifytalk',
+        owner: '12cjn',
+        admin: ['12cjn'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false,
+        id: decodeURI(window.location.pathname),
+      })
+    </script>
+
     <!-- 搜索 -->
     <script src="static/docsify/lib/plugins/search.min.js"></script>
     <!-- 代码高亮  static/prismjs/components 目录下按需引入-->
@@ -197,5 +215,9 @@
     <script src="static/docsify-pagination/dist/docsify-pagination.min.js"></script>
     <!-- 图片的放大缩小 -->
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <!-- emoji表情支持 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
 </body>
 </html>
