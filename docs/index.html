@@ -52,6 +52,7 @@
     </ul>
   </nav>
   <div id="app">加载中...</div>
+  <div id="gitalk-container"></div>
 
   <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4.12.2/lib/docsify.min.js"></script> -->
@@ -198,6 +199,8 @@
         distractionFreeMode: false,
         id: decodeURI(window.location.pathname),
       })
+
+      gitalk.render('gitalk-container')
     </script>
 
     <!-- 搜索 -->
