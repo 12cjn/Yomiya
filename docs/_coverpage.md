@@ -6,7 +6,7 @@
 - 最后编辑时间
 - ......
 
-[Github](https://github.com/missfoxw/docsify-template/tree/master)
+[Github](https://github.com/12cjn/Yomiya)
 [点击进入](./README.md)
 
 <!-- 背景图片 -->
