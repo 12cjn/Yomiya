@@ -16,7 +16,7 @@
   <!--支持mermaid-->
   <!-- <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css"> -->
   <!-- Gitalk css -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -52,6 +52,7 @@
     </ul>
   </nav>
   <div id="app">加载中...</div>
+  <div id="gitalk-container"></div>
 
   <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4.12.2/lib/docsify.min.js"></script> -->
@@ -185,8 +186,7 @@
     </script>
 
     <!-- plugin：gitalk(用户评论) -->
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
       const gitalk = new Gitalk({
         clientID: 'd028a1a2d9393917b6ec',
@@ -199,6 +199,7 @@
         distractionFreeMode: false,
         language: 'zh-CN',
       })
+      gitalk.render('gitalk-container');
     </script>
 
     <!-- 搜索 -->
