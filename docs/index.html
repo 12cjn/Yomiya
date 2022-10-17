@@ -16,7 +16,7 @@
   <!--支持mermaid-->
   <!-- <link rel="stylesheet" href="static/mermaid/dist/mermaid.min.css"> -->
   <!-- Gitalk css -->
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css">
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -186,7 +186,7 @@
     </script>
 
     <!-- plugin：gitalk(用户评论) -->
-    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
     <script>
       const gitalk = new Gitalk({
         clientID: 'd028a1a2d9393917b6ec',
@@ -194,12 +194,11 @@
         repo: 'mydocsifytalk',
         owner: '12cjn',
         admin: ['12cjn'],
-        id: location.pathname, 
         // facebook-like distraction free mode
         distractionFreeMode: false,
+        id: decodeURI(window.location.pathname),
         language: 'zh-CN',
       })
-      gitalk.render('gitalk-container');
     </script>
 
     <!-- 搜索 -->
