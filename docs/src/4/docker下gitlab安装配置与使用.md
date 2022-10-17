@@ -29,7 +29,7 @@ Docker安装传送门:
 
 ## **一、安装及配置**
 
-### **1. 从**`**Docker**`**镜像仓库 拉取**`**gitlab**`**镜像**
+### **1. 从**`Docker`**镜像仓库 拉取**`gitlab`**镜像**
 
 ```latex
 # gitlab-ce为稳定版本，后面不填写版本则默认pull最新latest版本
@@ -448,5 +448,3 @@ gitlab-ctl tail <service name>查看服务的日志
 gitlab-ctl tail nginx  #如查看gitlab下nginx日志
 gitlab-rails console  #进入控制台
 ```
-
-`感谢你的耐心阅读, 给你点赞 , 创作不易, 如果对你有帮助,❤️❤️请用你的发财的小手点个赞哦❤️❤️, 谢谢 同时欢迎大家转载, 记得注明出处`

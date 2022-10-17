@@ -41,7 +41,7 @@
           <li><a target="_blank" data-theme="dark">dark</a></li>
           <li><a target="_blank" data-theme="buble">buble</a></li>
           <li><a target="_blank" data-theme="theme-simple">simple</a></li>
-          <li><a target="_blank" data-theme="theme-simple-dark">defaults</a></li>       
+          <li><a target="_blank" data-theme="theme-simple-dark">simple-dark</a></li>       
           <li><a target="_blank" data-theme="theme-defaults">defaults</a></li>
         </ul>
       </li>
@@ -69,11 +69,11 @@
   
       window.$docsify = {
         // 标题
-        name: '这是主标题',
+        name: '首页',
         //你的logo
         // logo: 'static/img/logo.png',
         //配置仓库地址或者 username/repo 的字符串，会在页面右上角渲染一个 GitHub Corner 挂件
-        repo: '12cjn/Yomiya',
+        repo: '12cjn/Yomiya/',
         coverpage: true, // 封面
         // 默认情况下会抓取文档中所有标题渲染成目录，可配置最大支持渲染的标题层级
         maxLevel: 3,
@@ -141,14 +141,14 @@
             // 每次开始解析 Markdown 内容时调用
             hook.beforeEach(function (html) {
   
-              url = 'https://github.com/12cjn/Yomiya/tree/master/docs' + vm.route.file
+              url = 'https://github.com/12cjn/Yomiya/blob/master/docs/' + vm.route.file
               
               var editHtml = '[📝 编辑](' + url + ')\n\n'
   
               return editHtml
                 + html
                 + '\n\n----\n\n'
-                + '<a href="https://github.com/12cjn" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">by Yomiya ✈ {docsify-updated}'
+                + '<a href="https://github.com/12cjn/" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">by Yomiya ✈ {docsify-updated}'
                 + '</a>'
             })
   
