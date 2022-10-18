@@ -4,7 +4,7 @@
 ```shell
 docker pull ubuntu
 ```
-![docker-container-run.png](docs/media/docker-container-run.png)
+![docker-container-run.png](./media/docker-container-run.png)
 ### 启动容器
 以下命令使用 ubuntu 镜像启动一个容器，参数为以命令行模式进入该容器：
 ```shell
@@ -21,4 +21,4 @@ docker run -it ubuntu /bin/bash
 ```shell
 root@ed09e4490c57:/# exit
 ```
-![docker-container-exit.png](docs/media/docker-container-exit.png)
+![docker-container-exit.png](./media/docker-container-exit.png)
