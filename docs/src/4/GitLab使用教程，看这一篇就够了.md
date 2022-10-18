@@ -30,15 +30,11 @@ GIT的内容存储使用的是[SHA-1](https://links.jianshu.com/go?to=http%3A%2F
 
 首先打开公司内网部署GitLab的服务器，由于是内部员工使用，所以注册时候Username和Full name最好用自己的名字，这样管理员给用户分配项目权限的时候能够一目了然。
 
-![](https://upload-images.jianshu.io/upload_images/6781582-ca30fee1101f4739.png#crop=0&crop=0&crop=1&crop=1&id=JD1oS&originHeight=610&originWidth=1021&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-ca30fee1101f4739.png#crop=0&crop=0&crop=1&crop=1&id=JD1oS&originHeight=610&originWidth=1021&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 以管理员的身份登入gitlab，点击Settings，然后选择Members
 
-![](https://upload-images.jianshu.io/upload_images/6781582-054073a3d940c331.png#crop=0&crop=0&crop=1&crop=1&id=F797x&originHeight=309&originWidth=248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-054073a3d940c331.png#crop=0&crop=0&crop=1&crop=1&id=F797x&originHeight=309&originWidth=248&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 可以通过输入名字选择要分配权限的小组成员，然后分配角色，选择权限有效时间，点击Add to Project就把人员拉近到项目中。GitLab的角色有以下四种：
 
@@ -47,17 +43,13 @@ image
 - Developer：可以克隆代码、开发、提交、push，可以赋予开发人员此权限
 - MainMaster：可以创建项目、添加tag、保护分支、添加项目成员、编辑项目，一般GitLab管理员或者CTO才有此权限
 
-![](https://upload-images.jianshu.io/upload_images/6781582-b9d4cbc699a0ded6.png#crop=0&crop=0&crop=1&crop=1&id=x23eK&originHeight=374&originWidth=1240&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-b9d4cbc699a0ded6.png#crop=0&crop=0&crop=1&crop=1&id=x23eK&originHeight=374&originWidth=1240&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 可以通过HTTP和SSH去做克隆和提交代码，由于HTTP需要每次提交的时候输入邮箱号和密码，所以常用电脑上配置SSH，只要配置好了以后，下次提交的时候就方便了。SSH的方式主要是通过生成一个密钥和一个公钥，这个公钥可以使用在GitHub，GItLab，内网GitLab中。
 大多数 Git 服务器都会选择使用 SSH 公钥来进行授权。系统中的每个用户都必须提供一个公钥用于授权，没有的话就要生成一个。生成公钥的过程在所有操作系统上都差不多。首先你要确认一下本机是否已经有一个公钥。
 SSH 公钥默认储存在账户的主目录下的 ~/.ssh 目录。进去看看：
 
-![](https://upload-images.jianshu.io/upload_images/6781582-7ba3cae2bd2c79ea.png#crop=0&crop=0&crop=1&crop=1&id=kYPIK&originHeight=266&originWidth=620&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-7ba3cae2bd2c79ea.png#crop=0&crop=0&crop=1&crop=1&id=kYPIK&originHeight=266&originWidth=620&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 看一下有没有id_rsa和id_rsa.pub(或者是id_dsa和id_dsa.pub之类成对的文件)，有 .pub 后缀的文件就是公钥，另一个文件则是密钥。
 
@@ -78,25 +70,19 @@ Your public key has been saved in /home/you/.ssh/id_rsa.pub.
 The key fingerprint is: # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db 6789346623@qq.com
 ```
 
-![](https://upload-images.jianshu.io/upload_images/6781582-289cf6cfe483b32e.png#crop=0&crop=0&crop=1&crop=1&id=FP7oM&originHeight=288&originWidth=840&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-289cf6cfe483b32e.png#crop=0&crop=0&crop=1&crop=1&id=FP7oM&originHeight=288&originWidth=840&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 1、查看你生成的公钥：
 vim id_rsa.pub
 就可以查看到你的公钥
 2、登陆GitLab账号，点击用户图像，然后 Settings -> 左栏点击 SSH keys
 
-![](https://upload-images.jianshu.io/upload_images/6781582-7dbf927dcb6f96b0.png#crop=0&crop=0&crop=1&crop=1&id=JA0Ho&originHeight=310&originWidth=284&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-7dbf927dcb6f96b0.png#crop=0&crop=0&crop=1&crop=1&id=JA0Ho&originHeight=310&originWidth=284&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 3、复制公钥内容，粘贴进“Key”文本区域内，取名字
 4、点击Add Key
 
-![](https://upload-images.jianshu.io/upload_images/6781582-050d2c55bd5202f0.png#crop=0&crop=0&crop=1&crop=1&id=npoWk&originHeight=671&originWidth=988&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-050d2c55bd5202f0.png#crop=0&crop=0&crop=1&crop=1&id=npoWk&originHeight=671&originWidth=988&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 1、首先把服务器上的代码克隆下来
 
@@ -116,9 +102,7 @@ git commit -a -m "提交添加的注释信息"
 
 4、将本地库的commit推送到远程服务器
 
-![](https://upload-images.jianshu.io/upload_images/6781582-0b3c4f307e1f35bb.png#crop=0&crop=0&crop=1&crop=1&id=cNH2y&originHeight=1598&originWidth=1164&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
-
-image
+![image](https://upload-images.jianshu.io/upload_images/6781582-0b3c4f307e1f35bb.png#crop=0&crop=0&crop=1&crop=1&id=cNH2y&originHeight=1598&originWidth=1164&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
 **拉取服务器上最新资源：**
 
