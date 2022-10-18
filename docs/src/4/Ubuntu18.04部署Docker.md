@@ -63,11 +63,11 @@ sudo docker ps -a
 
 - 将文件包解压缩
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/32635561/1662099431617-d6f659e0-fb0f-40ad-af7d-dfd2573da4a9.png)
+![image1.png](https://s2.loli.net/2022/10/18/y7h5c4pfZF3TGCN.png)
 
 - 查看 **README **文件
 
-![image.png](https://cdn.nlark.com/yuque/0/2022/png/32635561/1662099791447-0e0b4021-6530-42b4-b3c6-669155b11c2b.png)
+![image2.png](https://s2.loli.net/2022/10/18/M4fKT7H1qtOiFSs.png)
 ```bash
 #解释器/usr/bin/zsh
 #执行授权
