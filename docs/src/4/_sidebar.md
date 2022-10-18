@@ -4,4 +4,4 @@
 * [《Docker下gitlab安装配置与使用》](src/4/docker下gitlab安装配置与使用.md)
 * [《Ubuntu18.04部署Docker》](src/4/Ubuntu18.04部署Docker.md)
 * [《Docker常用命令》](src/4/Docker常用命令.md)
-* [《GitLab使用教程，看这一篇就够了 - 简书》](src/4/GitLab使用教程，看这一篇就够了%20-%20简书.md)
+* [《GitLab使用教程，看这一篇就够了 - 简书》](src/4/GitLab使用教程，看这一篇就够了.md)
