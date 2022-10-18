@@ -1,9 +1,9 @@
 # 手动部署
 在新的主机上首次安装 [Docker](https://so.csdn.net/so/search?q=Docker&spm=1001.2101.3001.7020) 之前，需要设置 Docker 存储库。之后，可以从存储库安装和更新 Docker。
-:::info
-设置存储库
-:::
-```shell
+
+> 设置存储库
+
+```bash
 1、更新包索引并安装包，以允许通过 HTTPS 使用存储库：
 sudo apt-get update
  
@@ -21,10 +21,10 @@ echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
-:::info
-安装Docker引擎
-:::
-```shell
+
+> 安装Docker引擎
+
+```bash
 1、更新包索引，并安装最新版本的 Docker 引擎和容器，或转到下一步以安装特定版本。
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
@@ -50,10 +50,10 @@ sudo service docker restart
 sudo docker version
 sudo docker ps -a
 ```
-:::info
-[Install Docker Engine on Ubuntu（英文教程）](https://docs.docker.com/engine/install/ubuntu/)
+
+> [Install Docker Engine on Ubuntu（英文教程）](https://docs.docker.com/engine/install/ubuntu/)
 [Install Docker Engine on CentOS（英文教程）](https://docs.docker.com/engine/install/centos/)
-:::
+
 # 脚本部署
 ### 准备脚本文件
 
@@ -68,7 +68,7 @@ sudo docker ps -a
 - 查看 **README **文件
 
 ![image.png](https://cdn.nlark.com/yuque/0/2022/png/32635561/1662099791447-0e0b4021-6530-42b4-b3c6-669155b11c2b.png)
-```shell
+```bash
 #解释器/usr/bin/zsh
 #执行授权
 sudo chmod +x ./install.sh
