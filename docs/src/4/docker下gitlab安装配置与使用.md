@@ -31,7 +31,7 @@ Docker安装传送门:
 
 ### **1. 从**`Docker`**镜像仓库 拉取**`gitlab`**镜像**
 
-```bash
+```bash {.line-numbers}
 # gitlab-ce为稳定版本，后面不填写版本则默认pull最新latest版本
 # (此步骤时间可能比较久,需要耐心等待⌛️...)
 docker pull gitlab/gitlab-ce
@@ -41,7 +41,7 @@ docker pull gitlab/gitlab-ce
 
 如果你需要安装其他版本, [**请去官方镜像库查询其它版本号**](https://link.zhihu.com/?target=https%3A//hub.docker.com/r/gitlab/gitlab-ee) , 或者通过命令查找:
 
-```bash
+```bash {.line-numbers}
 # 从Docker Hub查找镜像
 docker search gitlab
 ```
@@ -64,20 +64,20 @@ docker search gitlab
 
 首先在运行之前,我们先需要了解一下`docker` 如何`创建`和`运行容器`:
 
-```bash
+```bash {.line-numbers}
 # 创建一个新的容器并运行一个命令
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 
 通常会将 `GitLab 的配置 (etc) 、 日志 (log) 、数据 (data)`放到容器之外， 便于日后升级， 因此请先准备这三个目录。 在设置其他所有内容之前，请配置一个新的环境变量$GITLAB_HOME ，该变量指向配置，日志和数据文件将驻留的目录。确保目录存在并且已授予适当的权限。
 
-```bash
+```bash {.line-numbers}
 export GITLAB_HOME=$HOME/docker/gitlab
 ```
 
 $HOME: 指当系统根目录, 需要提前创建好docker/gitlab 目录
 
-```bash
+```bash {.line-numbers}
 # 在系统的根目录执行(存放的路径根据自己随意设置即可)
 mkdir docker/gitlab
 ```
@@ -88,7 +88,7 @@ mkdir docker/gitlab
 | --- | --- | --- |
 
 
-```bash
+```bash {.line-numbers}
 sudo docker run --detach \
   --publish 443:443 --publish 80:80 --publish 22:22 \
   --name gitlab \
@@ -101,7 +101,7 @@ sudo docker run --detach \
 
 或者:
 
-```bash
+```bash {.line-numbers}
 docker run -d  -p 443:443 -p 9000:80 -p 22:22 --name gitlab --restart always -v $HOME/docker/gitlab/config:/etc/gitlab -v $HOME/docker/gitlab/logs:/var/log/gitlab -v $HOME/docker/gitlab/data:/var/opt/gitlab gitlab/gitlab-ce
 
 # -d：后台运行
@@ -120,7 +120,7 @@ docker run -d  -p 443:443 -p 9000:80 -p 22:22 --name gitlab --restart always -v 
 
 可以通过如下命令查看已经运行的容器:
 
-```bash
+```bash {.line-numbers}
 # 列出容器, 只显示已经运行的`容器`
 docker ps
 
@@ -154,7 +154,7 @@ docker ps -a
 
 按上面的方式，`gitlab`容器`运行`没问题，但在gitlab上创建项目的时候，生成项目的URL访问地址是按容器的hostname来生成的，也就是容器的id。作为gitlab服务器，我们需要一个固定的URL访问地址，于是需要配置`gitlab.rb` （宿主机路径：$HOME/gitlab/config/gitlab.rb), 配置http协议所使用的访问地址
 
-```bash
+```bash {.line-numbers}
 # 通过vim 来编辑相应的配置, $HOME是当前系统的根目录,根据自己的路径自行修改
 vim $HOME/gitlab/config/gitlab.rb
 
@@ -169,7 +169,7 @@ gitlab_rails['gitlab_shell_ssh_port'] = 22 # 此端口是run时22端口映射的
 
 修改完之后重启gitlab
 
-```bash
+```bash {.line-numbers}
 # 每次修改gitlab 配置都需要重启
 docker restart gitlab
 ```
@@ -178,7 +178,7 @@ docker restart gitlab
 
 主要用于`gitlab` 日常使用中邮件通知服务
 
-```bash
+```bash {.line-numbers}
 1.修改配置文件,建议使用企业邮箱
 vim $HOME/gitlab/config/gitlab.rb
 
@@ -202,9 +202,9 @@ gitlab_rails['gitlab_email_from'] = 'getlab'
 
 使配置生效之后我们可以使用 `gitlab` 自带的工具进行一下测试。依次执行下面的命令：
 
-```bash
-# 开启 gitlab 的 bash 工具
-docker exec -it gitlab bash
+```bash {.line-numbers}
+# 开启 gitlab 的 bash {.line-numbers} 工具
+docker exec -it gitlab bash {.line-numbers}
 
 # 开启 gitlab-rails 工具
 gitlab-rails console production
@@ -434,7 +434,7 @@ Pull Request（`PR`）的说明:
 
 ## **gitlab-ctl 常用命令**
 
-```bash
+```bash {.line-numbers}
 gitlab-ctl start #启动全部服务
 gitlab-ctl restart#重启全部服务
 gitlab-ctl stop #停止全部服务

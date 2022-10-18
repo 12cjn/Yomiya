@@ -3,7 +3,7 @@
 
 > 设置存储库
 
-```bash
+```bash {.line-numbers}
 1、更新包索引并安装包，以允许通过 HTTPS 使用存储库：
 sudo apt-get update
  
@@ -24,7 +24,7 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
 
 > 安装Docker引擎
 
-```bash
+```bash {.line-numbers}
 1、更新包索引，并安装最新版本的 Docker 引擎和容器，或转到下一步以安装特定版本。
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
@@ -68,7 +68,7 @@ sudo docker ps -a
 - 查看 **README **文件
 
 ![image2.png](https://s2.loli.net/2022/10/18/M4fKT7H1qtOiFSs.png)
-```bash
+```bash {.line-numbers}
 #解释器/usr/bin/zsh
 #执行授权
 sudo chmod +x ./install.sh

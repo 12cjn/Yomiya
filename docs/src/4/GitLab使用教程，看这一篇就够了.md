@@ -55,17 +55,15 @@ SSH 公钥默认储存在账户的主目录下的 ~/.ssh 目录。进去看看�
 
 假如没有这些文件，甚至连 .ssh 目录都没有，可以用 ssh-keygen 来创建。该程序在 Linux/Mac 系统上由 SSH 包提供，而在 Windows 上则包含在GitBash里面里：
 
-```bash
+```bash {.line-numbers}
 $ ssh-keygen -t rsa -C "6789346623@qq.com"
-
 Creates a new ssh key using the provided email # Generating public/private rsa key pair.
-
 Enter file in which to save the key (/home/you/.ssh/id_rsa):
 ```
 
 然后直接三次Enter键就可以了，完了之后大概是这样：
 
-```bash
+```bash 
 Your public key has been saved in /home/you/.ssh/id_rsa.pub.
 The key fingerprint is: # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db 6789346623@qq.com
 ```
@@ -86,7 +84,7 @@ vim id_rsa.pub
 
 1、首先把服务器上的代码克隆下来
 
-```bash
+```bash {.line-numbers}
 git clone git@192.168.200.109:snailå/GitTest.git
 ```
 
@@ -96,7 +94,7 @@ git clone git@192.168.200.109:snailå/GitTest.git
 也可以用git add 文件名进行单独文件的提交
 3、将修改提交到本地库
 
-```bash
+```bash {.line-numbers}
 git commit -a -m "提交添加的注释信息"
 ```
 
@@ -109,7 +107,7 @@ git commit -a -m "提交添加的注释信息"
 **在不同的分支之间切换：git checkout 分支名**
 注意事项：切换分支的时候，如果当前分支有改动没有提交，是不能切换分支的，需要先把改动的内容提交或者放入缓存区
 
-```bash
+```bash {.line-numbers}
 git checkout release/v1.0.0
 ```
 
