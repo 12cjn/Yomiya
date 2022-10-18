@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/12cjn/lizituchuang/main/202210181603247.png ':size=70%')
+![logo](https://raw.githubusercontent.com/12cjn/lizituchuang/main/202210181603247.png ':size=95%')
 
 # 构建web文档 - docsify模板
 - 主题切换
