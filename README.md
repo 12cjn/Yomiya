@@ -29,7 +29,7 @@ demo页面:https://12cjn.github.io/Yomiya/#/
 克隆项目。
 > `git clone`支持多种协议，如`http(s)`,`ssh`,`git`等。
 
-```bash {.line-numbers}
+```bash
 git clone git://github.com/missfoxw/docsify-template.git
 ```
 
@@ -40,7 +40,7 @@ git clone git://github.com/missfoxw/docsify-template.git
 > docsify需要node环境，node自带npm
 
 
-```bash {.line-numbers}
+```bash
 # 以下使用二进制文件安装，该部署过程使用的安装包是已编译好的二进制文件。解压之后，在bin文件夹中就已存在node和npm，无需重复编译。
 
 # 下载（可指定版本）
@@ -66,7 +66,7 @@ npm -v
 
 ### 安装docsify
 
-```bash {.line-numbers}
+```bash
 npm i docsify-cli -g
 ```
 
@@ -74,7 +74,7 @@ npm i docsify-cli -g
 
 使用git方便管理文档
 
-```bash {.line-numbers}
+```bash
 # 首先安装必要的环境
 yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel gcc perl-ExtUtils-MakeMaker
 
@@ -112,7 +112,7 @@ git --version
 
 在`docsify-template`目录下启动模板：
 
-```bash {.line-numbers}
+```bash
 # 打开下载的地址
 
 docsify serve docs
