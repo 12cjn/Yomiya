@@ -7,3 +7,4 @@
 * [《GitLab使用教程，看这一篇就够了》](src/4/GitLab使用教程，看这一篇就够了.md)
 * [《Docker搭建本地仓库Harbor》](src/4/Docker搭建本地仓库Harbor.md)
 * [《Docker私有仓库的搭建》](src/4/Docker私有仓库的搭建.md)
+* [《Docsify部署Gitalk评论系统》](src/4/Docsify部署Gitalk评论系统.md)
