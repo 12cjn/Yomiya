@@ -1,5 +1,5 @@
 * [返回主页](/README.md)
-* [说明](/src/4/)
+* [说明](/src/4/) 
   * [《LeaningDjango4.0》](src/4/LeaningDjango4.0.md)
   * [《Docker下gitlab安装配置与使用》](src/4/docker下gitlab安装配置与使用.md)
   * [《Ubuntu18.04部署Docker》](src/4/Ubuntu18.04部署Docker.md)
@@ -8,3 +8,4 @@
   * [《Docker搭建本地仓库Harbor》](src/4/Docker搭建本地仓库Harbor.md)
   * [《Docker私有仓库的搭建》](src/4/Docker私有仓库的搭建.md)
   * [《Docsify部署Gitalk评论系统》](src/4/Docsify部署Gitalk评论系统.md)
+  * [RDF API 指南](http://drf.jiuyou.info/#/)
