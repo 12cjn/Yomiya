@@ -1,4 +1,4 @@
-<!-- # 构建web文档 - docsify模板
+# 构建web文档 - docsify模板
 - 主题切换
 - 搜索关键字
 - edit in repo
@@ -7,7 +7,7 @@
 - ......
 
 [Github](https://github.com/12cjn/Yomiya)
-[点击进入](./README.md) -->
+[点击进入](./README.md)
 
 <!-- 背景图片 -->
 
