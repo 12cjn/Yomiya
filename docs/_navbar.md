@@ -7,6 +7,8 @@
 
 - [百宝箱](src/mytool/)
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" title="docsify-darklight-theme" type="text/css" disabled>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="theme-simple-dark" disabled>
 <li>
     <p id="nav_d">👘主题切换</p>
     <ul class="demo-theme-preview">
