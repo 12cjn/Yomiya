@@ -2,7 +2,7 @@
 
 <iframe id="inlineFrameExample"
     title="Inline Frame Example"
-    width="300"
-    height="200"
+    width="300px"
+    height="400px"
     src="https://www.amap.com/">
 </iframe>
