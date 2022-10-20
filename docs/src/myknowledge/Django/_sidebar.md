@@ -1,2 +1,2 @@
 - [LeaningDjango4.0](src/myknowledge/Django/LeaningDjango4.0.md)
-- [RDF API 指南](http://drf.jiuyou.info/#/)
+- [RDF API 指南(网页跳转)](https://12cjn.github.io/django-rest-framework-api-guide/#/)

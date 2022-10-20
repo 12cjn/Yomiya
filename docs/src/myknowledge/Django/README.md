@@ -1,8 +1,2 @@
 - [LeaningDjango4.0](src/myknowledge/Django/LeaningDjango4.0.md)
-
-<iframe id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="300px"
-    height="700px"
-    src="http://drf.jiuyou.info/#/drf/responses">
-</iframe>
+- [RDF API 指南(网页跳转)](https://12cjn.github.io/django-rest-framework-api-guide/#/)
