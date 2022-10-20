@@ -99,6 +99,17 @@
           '/.*/_navbar.md': '/_navbar.md',
           //'/.*/_sidebar.md': '/_sidebar.md',
         },
+        // 滚动到页面顶部
+        scrollToTop: {
+          auto: true,
+          text: 'Top',
+          icon: 'arrow-up-2',
+          right: 15,
+          bottom: 15,
+          width: 50,
+          height: 40,
+          offset: 500
+        },
         //统计字数
         count:{
           countable:true,
@@ -150,6 +161,8 @@
         ]
       }
     </script>
+    <!-- 滚动到页面顶部 -->
+    <script src="//unpkg.com/@zhg-x/docsify-plugins@1.0.2/src/scroll-to-top.js"></script><script src="//unpkg.com/@zhg-x/docsify-plugins@1.0.2/src/scroll-to-top.js"></script>
     <!--点击页面出现爱心-->
     <script src="static/docsify/lib/plugins/click_heart.js"></script>
     <!-- plugin：gitalk(用户评论) -->
