@@ -1,3 +1,3 @@
 - [Typora](src/mytool/Typora破解版2022.md)
 - [思源笔记](src/mytool/思源笔记.md)
-- [预览神器QuickLook](src/mytool预览神器QuickLook.md)
+- [预览神器QuickLook](src/mytool/预览神器QuickLook.md)
