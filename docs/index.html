@@ -164,6 +164,13 @@
           pageview: true,
           // ...
           // 不支持 el 和 path 参数自定义
+          // 设置 emoji 为QQ与哔哩哔哩
+          emoji: [
+            '//unpkg.com/@waline/emojis@1.1.0/qq',
+            '//unpkg.com/@waline/emojis@1.1.0/bilibili',
+          ],
+          // 文章反应
+          reaction: true,         
         },
         // docsify 提供了一套插件机制，其中提供的钩子（hook）支持处理异步逻辑，可以很方便的扩展功能
         plugins: [
