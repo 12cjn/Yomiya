@@ -65,7 +65,7 @@ sudo docker ps -a
 
 ![image1.png](https://s2.loli.net/2022/10/18/y7h5c4pfZF3TGCN.png)
 
-- 查看 **README **文件
+- 查看 *README* 文件
 
 ![image2.png](https://s2.loli.net/2022/10/18/M4fKT7H1qtOiFSs.png)
 ```bash
