@@ -63,13 +63,6 @@
   <script src="static/docsify/lib/docsify.min.js"></script>
   <!-- Waline评论系统引入 -->
   <div id="waline"></div>
-  <script>
-    Waline.init({
-      el: '#waline',
-      serverURL: 'https://waline-talk-107dy57pl-12cjn.vercel.app',
-    });
-  </script>
-
   <script>  
       var preview = Docsify.dom.find('.demo-theme-preview');
       var themes = Docsify.dom.findAll('[rel="stylesheet"]');
@@ -248,6 +241,13 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="https://unpkg.com/docsify-copy-code"></script>
+    <!-- Waline评论系统引入 -->
+    <script>
+      Waline.init({
+        el: '#waline',
+        serverURL: 'https://waline-talk-107dy57pl-12cjn.vercel.app',
+      });
+    </script>
     <!-- cusdis中文库 -->
     <!-- <script src="https://cusdis.com/js/widget/lang/zh-cn.js"></script> -->
     <!-- <script>
