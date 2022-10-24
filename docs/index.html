@@ -15,7 +15,7 @@
   <!-- <link rel="stylesheet" href="static/docsify/themes/theme-simple.css" title="theme-simple" disabled> -->
   <!-- <link rel="stylesheet" href="static/docsify/themes/theme-defaults.css" title="theme-defaults" disabled> -->
   <!-- Gitalk css -->
-  <link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css">
+  <!-- <link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css"> -->
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -99,6 +99,11 @@
           '/.*/_navbar.md': '/_navbar.md',
           //'/.*/_sidebar.md': '/_sidebar.md',
         },
+        // cusdis评论系统
+        cusdis:{
+          host: 'https://cusdis.com',
+          appID: 'ff804ac6-6702-43bd-849b-69d90880af55'
+        },
         // 滚动到页面顶部
         scrollToTop: {
           auto: true,
@@ -164,6 +169,8 @@
         ]
       }
     </script>
+    <!-- cusdis核心库 -->
+    <script src="https://cusdis.com/js/cusdis.docsify.js"></script>
     <!-- 滚动到页面顶部 -->
     <script src="//unpkg.com/@zhg-x/docsify-plugins@1.0.2/src/scroll-to-top.js"></script><script src="//unpkg.com/@zhg-x/docsify-plugins@1.0.2/src/scroll-to-top.js"></script>
     <!--点击页面出现爱心-->
