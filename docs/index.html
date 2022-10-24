@@ -16,6 +16,12 @@
   <!-- <link rel="stylesheet" href="static/docsify/themes/theme-defaults.css" title="theme-defaults" disabled> -->
   <!-- Gitalk css -->
   <!-- <link rel="stylesheet" href="https://wugenqiang.gitee.io/notebook/plugin/gitalk.css"> -->
+  <!-- Waline评论系统引入 -->
+  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@waline/client@v2/dist/waline.css"
+  />
   <style>
     /*列宽度自适应不换行*/
     table td { width: 10%; white-space:nowrap; }
@@ -55,6 +61,15 @@
   <!-- 本文所用的lib均是截止至2019年6月6日的最新版本，如需使用在线或最新版本，请在//unpkg.com/ 对应目录下获取 -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/docsify@4.12.2/lib/docsify.min.js"></script> -->
   <script src="static/docsify/lib/docsify.min.js"></script>
+  <!-- Waline评论系统引入 -->
+  <div id="waline"></div>
+  <script>
+    Waline.init({
+      el: '#waline',
+      serverURL: 'https://waline-talk-107dy57pl-12cjn.vercel.app',
+    });
+  </script>
+
   <script>  
       var preview = Docsify.dom.find('.demo-theme-preview');
       var themes = Docsify.dom.findAll('[rel="stylesheet"]');
@@ -234,8 +249,38 @@
     <!--在所有的代码块上添加一个简单的Click to copy按钮来允许用户从你的文档中轻易地复制代码-->
     <script src="https://unpkg.com/docsify-copy-code"></script>
     <!-- cusdis中文库 -->
-    <script src="https://cusdis.com/js/widget/lang/zh-cn.js"></script>
+    <!-- <script src="https://cusdis.com/js/widget/lang/zh-cn.js"></script> -->
+    <!-- <script>
+      window.CUSDIS_LOCALE = {
+        powered_by: '评论由 Yomiya/Cusdis 提供',
+        post_comment: '发送',
+        loading: '加载中...',
+      
+        // comment
+        email: '邮箱地址 (可选)',
+        nickname: '昵称',
+        reply_placeholder: '回复内容...',
+        reply_btn: '回复',
+        sending: '发送中...',
+      
+        // reply
+        mod_badge: '管理员',
+        content_is_required: '内容不能为空',
+        nickname_is_required: '昵称不能为空',
+      
+        comment_has_been_sent:
+          '评论已发送，管理员审核通过后会展示',
+      },
+      window.CUSDIS.setTheme = {
+        theme: 'dark'
+      },
+      window.onidchange = function (event) {
+        if (event.newURL.split('?')[0] !== event.oldURL.split('?')[0]) {
+          window.CUSDIS.initial()
+        }
+      }
+    </script> -->
     <!-- cusdis核心库 -->
-    <script src="https://cusdis.com/js/cusdis.docsify.js"></script>
+    <!-- <script src="https://cusdis.com/js/cusdis.docsify.js"></script> -->
 </body>
 </html>
