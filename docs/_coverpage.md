@@ -11,6 +11,7 @@
 
 <!-- 背景图片 -->
 
+![](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210271607143.png)
 <!-- ![](static/img/cp.jpeg) -->
 
 <!-- 背景色 -->
