@@ -11,8 +11,8 @@
 
 <!-- 背景图片 -->
 
-![](static/img/round_corner_image.png)
+![](_media/bg.png)
 
 <!-- 背景色 -->
 
-<!-- ![color](#fab1a0) -->
+![color](#f0f0f0)
