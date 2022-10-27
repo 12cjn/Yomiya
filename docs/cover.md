@@ -8,6 +8,6 @@
 - User-friendly catalog
 - Based on configuration
 
-[GitHub](https://github.com/pycrab/docsifyGuide) [docsify](https://docsify.js.org/#/quickstart)  [Get Started](index)
+[GitHub](https://github.com/pycrab/docsifyGuide) [docsify](https://docsify.js.org/#/quickstart)  [Get Started](./README.md)
 
 ![](_media/seaside.jpg)
