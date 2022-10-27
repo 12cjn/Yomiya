@@ -11,10 +11,4 @@
 [Github](https://github.com/12cjn/Yomiya)
 [点击进入](./README.md)
 
-<!-- 背景图片 -->
-
 ![](_media/bg.png)
-
-<!-- 背景色 -->
-
-![color](#f0f0f0)
