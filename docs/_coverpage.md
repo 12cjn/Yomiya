@@ -1,3 +1,5 @@
+<!-- _coverpage.md -->
+
 # 构建web文档 - docsify模板
 - 主题切换
 - 搜索关键字
