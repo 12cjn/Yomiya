@@ -13,4 +13,4 @@
 
 [Github](https://github.com/12cjn/Yomiya) [docsify](https://docsify.js.org/#/quickstart) [点击进入](./README.md)
 
-![](_media/bg.png)
+![](_media/seaside.jpg)
