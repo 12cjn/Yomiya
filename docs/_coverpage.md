@@ -8,7 +8,6 @@
 - 最后编辑时间
 - ......
 
-[Github](https://github.com/12cjn/Yomiya)
-[点击进入](./README.md)
+[Github](https://github.com/12cjn/Yomiya) [点击进入](./README.md)
 
 ![](_media/bg.png)
