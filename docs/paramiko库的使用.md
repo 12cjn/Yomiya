@@ -3,13 +3,18 @@
 ## 前言介绍
 
 1、`paramiko` 库是一个用于做远程控制的模块，使用该模块可以对远程服务器进行命令或文件操作。
+
 2、`paramiko` 库是用 python 语言写的一个模块，遵循 SSH2 协议，支持以加密和认证的方式，进行远程服务器的连接。 `paramiko` 库支持 Linux，Solaris，BSD，MacOS X，Windows 等平台通过 SSH 从一个平台连接到另外一个平台。
+
 3、利用 `paramiko` 模块，可以方便的进行 **ssh 连接**和 sftp 协议进行 **sftp 文件传输**。
+
 4、`paramiko` 模块包含了两个核心组件： ==`SSHClient`== 和 ==`SFTPClient`== 。
 
 -  ==`SSHClient`== 类：`SSHClient ` 类是**与 SSH 服务器会话**的高级表示。该类集成了`Transport`，`Channel` 和 `SFTPClient` 类。
 -  ==`SFTPClient`== 类：该类通过一个打开的 SSH Transport 会话**创建 SFTP 会话通道并执行远程文件操作**。
+
 5、名词介绍：
+
 ```python
 Channel：是一种类Socket，一种安全的SSH传输通道；
 Transport：是一种加密的会话（但是这样一个对象的Session并未建立），并且创建了一个加密的tunnels，这个tunnels叫做Channel；
@@ -28,28 +33,42 @@ compress(bool类型)，设置为True时打开压缩。
 ```
 
 ## 下载安装
+
 ```bash
 pip3 install paramiko 
 ```
 
 ## paramiko 库中 SSHClient 模块的使用
+
 1、作用：**用于连接远程服务器并执行基本命令**。
+
 2、远程连接分为两种：（1）基于用户名密码连接远程服务器 （2）基于公钥秘钥连接远程服务器。
+
 3、通过使用`paramiko`库远程操作服务器，其实本质也分为两种：（1）使用 ==`SSHClient`== 类（2）==`SSHClient`== 类封装 ==`Transport`== 类
+
 ### 基于用户名密码的连接
+
 #### 远程执行命令：
+
 ```python
 exec_command(command, bufsize=-1, timeout=None, get_pty=False, environment=None)
 ```
+
 1、参数说明：
+
 -  `command` (str类型)，执行的命令串；
 -  `bufsize` (int类型)，文件缓冲区大小，默认为-1(不限制)
+
 2、使用 `exec_command` 方法执行命令会返回三个信息：
+
 - 标准输入内容（用于实现交互式命令）--- `stdin` 
 - 标准输出（保存命令的正常执行结果）--- `stdout`
 - 标准错误输出（保存命令的错误信息）--- `stderr` 
+
 3、通过 `exec_command` 方法命令执行完毕后，通道将关闭，不能再使用。如果想继续执行另一个命令，必须打开一个新通道。
+
 #### ssh对象连接远程服务器并执行命令获取控制台打印的信息：
+
 ```python
 import paramiko
 
@@ -72,9 +91,13 @@ print(result.decode('utf-8'))
 # 关闭连接
 ssh_clint.close()
 ```
+
 运行结果：
+
 ![2289881-20220808145219190-51625209](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281156332.png)
+
 #### 使用try-except捕获异常：
+
 ```python
 import paramiko
 import sys
@@ -103,11 +126,17 @@ def sshExeCMD():
 if __name__ == '__main__':
     sshExeCMD()
 ```
+
 运行结果：（错误的远程服务器主机地址）
+
 ![2289881-20220808153803225-260979908](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281342938.png)
+
 运行结果2：（错误的远程服务器主机登录密码）
+
 ![2289881-20220808153943304-261866062](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281343474.png)
+
 #### 多台远程服务器上执行命令
+
 ```python
 # 导入paramiko，（导入前需要先在环境里安装该模块）
 import paramiko
@@ -161,7 +190,9 @@ if __name__ == '__main__':
             port=info.get("port")
         )
 ```
+
 #### SSHClient 封装 Transport 连接远程服务器：
+
 ```python
 import paramiko
 
@@ -181,13 +212,21 @@ print(res.decode('utf-8'))
 
 transport.close()
 ```
+
 运行结果：
+
 ![2289881-20220808164823280-1043325973](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281346261.png)
+
 ### 基于公钥密钥连接远程服务器（本地主机通过私钥加密加密，远程服务器通过公钥解密）
+
 1、客户端文件名：id_rsa（**id_rsa文件是本地主机的私钥，使用密钥连接远程服务器时，必须要在远程服务器上配制公钥**）
+
 2、服务端必须有文件名：authorized_keys（**authorized_keys文件是远程服务器上的公钥**）(在用`ssh-keygen`时，必须制作一个authorized_keys，可以用`ssh-copy-id`来制作)
+
 3、id_rsa文件的来源：终端执行命令 `ssh-keygen` ，然后一直回车，最后会在`~/.ssh`目录下生成该文件。
+
 #### ssh客户端通过使用密钥连接远程服务器并执行命令获取控制台打印信息：
+
 ```python
 import paramiko
 
@@ -212,7 +251,9 @@ print(result.decode('utf-8'))
 # 关闭连接
 ssh.close()
 ```
+
 #### SSHClient 封装 Transport 连接远程服务器：
+
 ```python
 import paramiko
 
@@ -236,7 +277,9 @@ print(result.decode('utf-8'))
 # 关闭连接
 transport.close()
 ```
+
 #### 基于私钥字符串进行连接远程服务器：
+
 ```python
 import paramiko
 from io import StringIO
@@ -290,11 +333,17 @@ print(result.decode('utf-8'))
 # 关闭连接
 transport.close()
 ```
+
 ## paramiko 库中 SFTPClient 模块的使用
+
 1、**用于连接远程服务器并执行上传下载文件**。
+
 2、SFTPClient作为一个SFTP客户端对象，根据SSH传输协议的sftp会话，实现远程文件操作，比如文件上传、下载、权限、状态等操作。
+
 3、常用方法：
+
 ==`from_transport`==方法：# 创建一个已连通的SFTP客户端通道。
+
 ```python
 # 方法定义：
 from_transport(cls,t)
@@ -302,7 +351,9 @@ from_transport(cls,t)
 # 参数说明：
 t(transport),一个已通过验证的传输对象。
 ```
+
 ==`get`==方法：从远程SFTP服务端下载文件到本地。
+
 ```python
 # 方法定义：
 get(remotepath, localpath, callback=None)
@@ -311,15 +362,23 @@ get(remotepath, localpath, callback=None)
 remotepath(str类型)，需要下载的远程文件(源)；
 callback(funcation(int,int)),获取已接收的字节数及总和传输字节数，以便回调函数调用，默认为None.
 ```
+
 `SFTPClient`类其它常用方法说明：
+
 > mkdir：在SFTP服务端创建目录，如sftp.mkdir("/home/userdir",mode=0777),默认模式是0777(八进制)，在某些系统上，mode被忽略。在使用它的地方，当前的umask值首先被屏蔽掉。
+>
 > remove：删除SFTP服务端指定目录，如sftp.remove("/home/userdir")。
+>
 > rename：重命名SFTP服务端文件或目录，如sftp.rename("/home/test.sh","/home/testfile.sh")
+>
 > stat：获取远程SFTP服务端指定文件信息，如sftp.stat("/home/testfile.sh")。
+>
 > listdir：获取远程SFTP服务端指定目录列表，以Python的列表(List)形式返回，如sftp.listdir("/home")。
 
 ### 基于用户名密码的远程服务器文件的上传与下载
+
 #### 从远程服务器上上传或下载文件：
+
 ```python
 import paramiko
 
@@ -341,7 +400,9 @@ ftp_client.put(r"C:\Users\Administrator.USER-CH3G0KO3MG\Desktop\test\fstab", "/e
 # 关闭ssh连接
 ssh_conn.close()
 ```
+
 ### 基于公钥密钥的远程服务器的上传与下载
+
 ```python
 import paramiko
 
@@ -360,6 +421,7 @@ transport.close()
 ```
 
 ## 实例1
+
 ```python
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
@@ -420,25 +482,39 @@ ha.run()
 ```
 
 ## 实例2
+
 ![image-20221028135740119](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281357817.png)
 
 ## 实例3
+
 <https://www.cnblogs.com/wztshine/p/11964321.html>
 
 ## 实例4
+
 > **Python环境：3.9**
+
 #### 目的
+
 巡检设备，并将收集到的信息保存为文本。
+
 #### 拓扑
+
 注：这里使用`EVE`模拟器，设备为`华为CE12800`交换机，通过[桥接](https://so.csdn.net/so/search?q=桥接&spm=1001.2101.3001.7020)，电脑能正常远程到`华为CE12800`
+
 ![](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281411106.png)
+
 #### 思路
+
 1. 通过`paramiko`实例连接到交换机
 2. 将巡检的命令写入到文本。
+
 ![image-20221028141243004](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281412521.png)
+
 1. 读取文件后，遍历循环这些命令。
 2. 收集回显信息，保存为文本。
+
 #### 交换机配置
+
 ```bash
 system-view immediately
 aaa
@@ -463,6 +539,7 @@ interface MEth0/0/0
  ip address 192.168.179.200 255.255.255.0
 quit
 ```
+
 #### 完整代码
 
 ```python
@@ -509,5 +586,8 @@ with open(f'{time.strftime("%Y%m%d")}_logs.log',mode='w',encoding="utf-8") as f:
 print("收集完成！")
 ssh_proc.close()
 ```
+
 脚本执行完成后，当前路径下会生成一个`20220421-logs.log`文件。文件名会根据日期变动。
+
 ![image-20221028141435941](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281414870.png)
+
