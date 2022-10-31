@@ -97,6 +97,29 @@ ssh_clint.close()
 
 ![2289881-20220808145219190-51625209](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281156332.png)
 
+> **注意**： 
+>
+> ```python
+> # 允许连接不在know_hosts文件中的主机
+> ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+> ```
+>
+> 如果在连接远程服务器之前缺少这部分代码，会报错：
+>
+> ![image-20221028180940371](https://raw.githubusercontent.com/12cjn/lizituchuang/main/img/202210281809050.png)
+>
+> 报错的含义是：**提示在服务器的known_hosts中没有，这个就是连接服务器的时候那个首次连接需要输入一个yes保存证书**。（远程服务器没有本地主机密钥或HostKeys对象）
+>
+> **配置 `set_missing_host_key_policy(policy)` 方法的参数常见取值有三种：**
+>
+>  `AutoAddPolicy` ：自动添加远程服务器的主机名及主机密钥到本地主机的known_hosts，不依赖load_system_host_key的配置。即新建立ssh连接时不需要再输入yes或no进行确认。最为常用。
+>
+>  `WarningPolicy` ：用于记录一个未知的主机密钥的python警告。并接受，功能上和AutoAddPolicy类似，但是会提示是新连接。
+>
+>  `RejectPolicy` ： 自动拒绝未知的主机名和密钥，依赖load_system_host_key的配置。此为默认选项。
+>
+> [解决本地主机首次连接连接远程服务器出现的known_hosts问题：通过 `set_missing_host_key_policy(paramiko.AutoAddPolicy())` 方法用于**实现ssh远程登录时是否需要确认输入yes，否则保存**]
+
 #### 使用try-except捕获异常：
 
 ```python
@@ -339,11 +362,11 @@ transport.close()
 
 1、**用于连接远程服务器并执行上传下载文件**。
 
-2、SFTPClient作为一个SFTP客户端对象，根据SSH传输协议的sftp会话，实现远程文件操作，比如文件上传、下载、权限、状态等操作。
+2、SFTPClient 作为一个 SFTP 客户端对象，根据 SSH 传输协议的 sftp 会话，实现远程文件操作，比如文件上传、下载、权限、状态等操作。
 
 3、常用方法：
 
-==`from_transport`==方法：# 创建一个已连通的SFTP客户端通道。
+==`from_transport`==方法：创建一个已连通的 SFTP 客户端通道。
 
 ```python
 # 方法定义：
@@ -353,7 +376,7 @@ from_transport(cls,t)
 t(transport),一个已通过验证的传输对象。
 ```
 
-==`get`==方法：从远程SFTP服务端下载文件到本地。
+==`get`==方法：从远程 SFTP 服务端下载文件到本地。
 
 ```python
 # 方法定义：
@@ -366,15 +389,15 @@ callback(funcation(int,int)),获取已接收的字节数及总和传输字节数
 
 `SFTPClient`类其它常用方法说明：
 
-> mkdir：在SFTP服务端创建目录，如sftp.mkdir("/home/userdir",mode=0777),默认模式是0777(八进制)，在某些系统上，mode被忽略。在使用它的地方，当前的umask值首先被屏蔽掉。
+> mkdir：在 SFTP 服务端创建目录，如sftp.mkdir("/home/userdir",mode=0777),默认模式是0777(八进制)，在某些系统上，mode被忽略。在使用它的地方，当前的umask值首先被屏蔽掉。
 >
-> remove：删除SFTP服务端指定目录，如sftp.remove("/home/userdir")。
+> remove：删除 SFTP 服务端指定目录，如sftp.remove("/home/userdir")。
 >
-> rename：重命名SFTP服务端文件或目录，如sftp.rename("/home/test.sh","/home/testfile.sh")
+> rename：重命名 SFTP 服务端文件或目录，如sftp.rename("/home/test.sh","/home/testfile.sh")
 >
-> stat：获取远程SFTP服务端指定文件信息，如sftp.stat("/home/testfile.sh")。
+> stat：获取远程 SFTP 服务端指定文件信息，如sftp.stat("/home/testfile.sh")。
 >
-> listdir：获取远程SFTP服务端指定目录列表，以Python的列表(List)形式返回，如sftp.listdir("/home")。
+> listdir：获取远程 SFTP 服务端指定目录列表，以Python的列表(List)形式返回，如sftp.listdir("/home")。
 
 ### 基于用户名密码的远程服务器文件的上传与下载
 
